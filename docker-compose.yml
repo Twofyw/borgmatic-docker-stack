@@ -1,0 +1,12 @@
+version: "3"
+services:
+
+    borgmatic:
+        image: borgmatic
+        volumes:
+            - ~:/data:ro
+            - ./:/borgmatic
+        deploy:
+            restart_policy:
+              condition: any
+              delay: 3h
